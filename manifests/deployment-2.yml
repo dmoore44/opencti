@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "opencti"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "opencti"
+    spec:
+      containers:
+        - name: "opencti"
+          image: "phopencti.azurecr.io/opencti"
+          ports:
+          - containerPort: 80
