@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "opencti"
+    labels:
+        app: "opencti"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: opencti2a7a-opencti.d1e1bc1e84eb4640b8ac.centralus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "opencti"
+                servicePort: 80
